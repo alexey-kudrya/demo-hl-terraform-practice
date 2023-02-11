@@ -1,12 +1,12 @@
-terraform {
-  backend "s3" {
-    bucket = "hillel-devops-terraform-state"
-    key    = "lesson25/terraform/terraform.tfstate"
-    region = "us-east-1"
+# terraform {
+#   backend "s3" {
+#     bucket = "hillel-devops-terraform-state"
+#     key    = "lesson25/terraform/terraform.tfstate"
+#     region = "us-east-1"
 
-    dynamodb_table = "hillel-devops-terraform-state-lock"
-  }
-}
+#     dynamodb_table = "hillel-devops-terraform-state-lock"
+#   }
+# }
 
 provider "aws" {
   region = "us-east-1"
