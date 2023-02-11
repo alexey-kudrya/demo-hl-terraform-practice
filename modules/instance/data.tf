@@ -9,6 +9,6 @@ data "aws_ami" "awslinux" {
   owners = ["amazon"]
 }
 
-data "local_file" "user_data" {
-  filename = "${path.module}/user_data.sh"
-} 
+# data "local_file" "user_data" {
+#   filename = "${path.module}/user_data.sh"
+# } 
