@@ -46,3 +46,23 @@ resource "aws_alb_listener" "this" {
     target_group_arn = aws_lb_target_group.this.arn
   }
 }
+
+resource "aws_lb_listener_rule" "ping" {
+  listener_arn = aws_alb.this.arn
+
+  action {
+    type = "fixed-response"
+
+    fixed_response {
+      content_type = "text/plain"
+      message_body = "pong"
+      status_code  = "200"
+    }
+  }
+
+  condition {
+    path_pattern {
+      values = ["/ping"]
+    }
+  }
+}
